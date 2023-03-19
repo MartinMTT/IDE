@@ -11,11 +11,12 @@ def random_predict(number:int=1) -> int:
 
 def score_game(random_predict) -> int:  
     count_ls = [] 
-    np.random.seed(1) 
-    random_array = np.random.randint(1, 101, size=(1000)) 
+#    np.random.seed(1) 
+    random_array = np.random.randint(1, 101, size=(100)) 
 
     for number in random_array:
         count_ls.append(random_predict(number))
+        print(number)
 
     score = int(np.mean(count_ls)) 
 
@@ -25,3 +26,6 @@ def score_game(random_predict) -> int:
 # print(f'Количество попыток: {random_predict()}')
 
 score_game(random_predict)
+
+
+

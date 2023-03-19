@@ -6,9 +6,9 @@ while True :
     count+=1
     predict_number=int(input('Uhadni cislo od 1 do 100 : '))
     if predict_number>number:
-        print('Cislo je vacsie')
+        print('Hadane cislo je mensie')
     elif predict_number<number:
-        print('Cislo je mensie')
+        print('Hadane cislo je vacsie')
     else:
         print(f"Uhadol si, cislo je {predict_number} na {count} pokusov")
         break
