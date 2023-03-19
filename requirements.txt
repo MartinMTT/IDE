@@ -1,0 +1,4 @@
+Microsoft Windows [Version 10.0.19044.2728]
+(c) Microsoft Corporation. Všetky práva vyhradené.
+
+C:\IDE>

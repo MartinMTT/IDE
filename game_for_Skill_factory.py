@@ -4,7 +4,7 @@ def gen_half_int(men,viac):                                 # generuje polovicu 
 
     return (men+viac)//2        
 
-def half_interval(number:int=1) -> int :                   # zisti na kolkokrat najde number
+def half_interval(number:int=1) -> int :                    # zisti na kolkokrat najde number
                                                             # half interval alghoritmus    
     count=0
     predict_number=gen_half_int(1,100)
@@ -33,12 +33,12 @@ def score_game(half_interval) -> int:                      # rata priemer hladan
     count_ls = [] 
 #    np.random.seed(11)                                     # neviem naco to chcu
                                                             # /why? it false output
-    random_array = np.random.randint(1, 100, size=(1000))    # generuje zoznam 1000 nahodnych cisel
+    random_array = np.random.randint(1, 100, size=(1000))   # generuje zoznam 1000 nahodnych cisel
     
     pocitadlo=0
     for num in random_array:                                
         pocitadlo+=1
-        count_ls.append(half_interval(num))                # ulozi do zoznamu pocet hladani
+        count_ls.append(half_interval(num))                 # ulozi do zoznamu pocet hladani
 
     score = int(np.mean(count_ls))                          # priemer hladani
 
@@ -46,4 +46,4 @@ def score_game(half_interval) -> int:                      # rata priemer hladan
     return(score)
 
 
-score_game(half_interval)                                  # run
+score_game(half_interval)                                   # run
