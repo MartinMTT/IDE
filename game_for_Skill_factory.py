@@ -1,10 +1,10 @@
 import numpy as np
 
-def gen_1_100int(men,viac):                                 # generuje medzi menej a viac
-    return np.random.randint(men,viac+1)                
+def gen_1_100int(men,viac):                                 # generuje polovicu medzi menej a viac
+    return (men+viac)//2                
 
-def random_predict(number:int=1) -> int :                   # zisti na kolkokrat najde
-                                                            # generuje random    
+def half_interval(number:int=1) -> int :                   # zisti na kolkokrat najde
+                                                            # half interval alghoritmus    
     count=0
     predict_number=gen_1_100int(1,101)
     mensie=1
@@ -25,17 +25,17 @@ def random_predict(number:int=1) -> int :                   # zisti na kolkokrat
     return count
 
 
-def score_game(random_predict) -> int:                      # rata priemer hladani
+def score_game(half_interval) -> int:                      # rata priemer hladani
       
     count_ls = [] 
 #    np.random.seed(11)                                     # neviem naco to chcu
-                                                            # why? it false output
-    random_array = np.random.randint(1, 101, size=(100))    # generuje zoznam 100 nahodnych cisel
-    pocitadlo=0
+                                                            # /why? it false output
+    random_array = np.random.randint(1, 101, size=(1))    # generuje zoznam 100 nahodnych cisel
     
+    pocitadlo=0
     for num in random_array:                                
         pocitadlo+=1
-        count_ls.append(random_predict(num))                # ulozi do zoznamu pocet hladani
+        count_ls.append(half_interval(num))                # ulozi do zoznamu pocet hladani
 
     score = int(np.mean(count_ls))                          # priemer hladani
 
@@ -43,4 +43,4 @@ def score_game(random_predict) -> int:                      # rata priemer hlada
     return(score)
 
 
-score_game(random_predict)                                  # run
+score_game(half_interval)                                  # run
